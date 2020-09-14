@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #141E30;  
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); 
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-sizing: border-box;
+    height:100vh
+    
+}
+
+
+textarea {
+    resize: none;
+    overflow-y: scroll;
+}
+
+#salir{
+    position: absolute;
+    top:10px;
+    right: 10px;
+    background-color: rgb(165, 40, 61);
+
+}
+
+hr{
+    color: white;
+    background: white;
+}
+
+.espacio{
+    margin: 0;
+    padding: 0;
+    height: 8px;
+}
+
+#oculto{
+    top: 0;
+    margin-top:5%;
+    display: none;
+    box-sizing: border-box;
+}
+
+#oculto h1{
+    background-color: red;
+}
+
+#header{
+    display: flex;
+    justify-content: center
+}
+
+#botones-abajo{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+#botones-abajo button{
+    width: 12%;
+    margin: 20px;
+}
+
+#contenedorSuperior{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#contenedor{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(13, 21, 39);
+    width: 100%;
+    margin: 5%;
+    margin-top:0 ;
+    box-sizing: border-box;
+    
+}
+
+#lista{
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    overflow-y: scroll;
+    height: 380px;
+    width: 220px;
+    margin-top: 10px;
+    margin-left: 0%;
+}
+
+#lista button{
+    width: 200px;
+    margin: 1px;
+}
+
+#lista input{
+    width: 170px;
+}
+
+#lista img{
+    width: 20px;
+}
+
+#datos{
+    margin-top: 0;
+    width: 65%;
+}
+
+#datos1{
+    display: block;
+    float: left;
+    margin-left: 5%;
+    margin-top: 0;
+    padding-top: 0;
+    width: 350px;
+}
+
+#datos2{
+    margin-left: 4%
+}
+
+.input{
+    background: transparent;
+    color: white;
+    font-size: medium;
+    
+}
+
+.inputeditable{
+    background-color: rgb(231, 231, 231);
+    color: black;
+}
+
+#divName, #divDni{
+    display: none
+}
+
+.form-group p{
+    margin:0;
+    padding:0;
+    color: white;
+    font-size: large;
+}
+
+.form-group input,
+.form-group textarea{
+    width: 300px;
+    text-align: center;
+}
+
+#resultados{
+    background: transparent;
+    color: white;
+    font-size: large;
+    text-align: center;
+
+}
+
+.append{
+    width: 200px;
+    border-radius: 2px;
+    font-size: large;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.appendActive, .append:hover{
+    background-color: lightblue;
+    border: 1px solid #007bff;
+}
+
+
+.btn-gme{
+    display: block;
+    float: left;
+    margin-left: 100px;
+    width: 200px;
+    height: 40px;
+    font-size: large;
+    background-color: rgb(51, 51, 51);
+    display: none;
+}
+
+
+@media screen and (max-width: 1244px){
+    
+    #contenedorSuperior{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    #lista{
+        width: 130px;
+        height: 600px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    #lista button{
+        width: 100px;
+        margin: 1px;
+    }
+
+    #datos{
+        width: 80%;
+    }
+    #datos1, #datos2{
+        
+        display: block;
+        float: right;
+        margin:0;
+        padding:0
+    }
+    #datos2{
+        margin-right:50px
+    }
+
+    .append{
+        width: 100px;
+        text-align: center;
+        font-size: medium;
+        padding-left: 5px;
+        padding-right: 5px
+
+    }
+}
