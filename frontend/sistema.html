@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicación de Gestión</title>
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="css/sistema.css">
-    
-    
+
+
     <!-- JQuery -->
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
@@ -21,109 +23,110 @@
 </head>
 
 <body>
-    <div id="header">
-        <div id="botones-abajo" class="" >
-            <button id="ver" class="btn btn-primary">VER</button>
-            <button id="showCrear" class="btn btn-primary">NUEVO</button>
-            <button id="showModificar" class="btn btn-primary">MODIFICAR</button>
-            <button id="showEliminar" class="btn btn-primary">ELIMINAR</button>
-            <div class="espacio"></div>
-        </div>
-    </div>
-    
-    <div class="alert alert-danger container" id="oculto" role="alert">
+
+
+    <div class="alert alert-danger container" id="hiddenAlert" role="alert">
         <h4 class="alert-heading">ALGO SALIÓ MAL...</h4>
         <p>PARA VER ESTA INFORMACIÓN DEBES ESTAR LOGUEADO!</p>
         <hr>
         <p class="mb-0">Serás redireccionado al inicio!</p>
     </div>
 
-    <p>
-        <button id="salir" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            SALIR
-        </button>
-    </p>
-    
-    <div id="contenedorSuperior">
-        <div id="contenedor" class="container jumbotron">
-            <div id="lista" class="list-group" >
-                <button id="projects" class="btn btn-primary">VER TODOS</button>
-                <div class="espacio"></div>
-                <button id="showName" class="btn btn-primary">BUSCAR POR NOMBRE</button>
-                <div id="divName">
-                    <div class="espacio"></div>
-                    <input type="search" id="name"> <img src="img/lupa.png" id="byName" alt="search">
+    <div class="d-flex justify-content-end">
+        <button id="exit" class="btn btn-primary btn-danger m-1" type="button">Salir</button>
+    </div>
+
+    <div id="container" class="container py-1 mt-5">
+
+        <div id="menu2" class="row py-3">
+            <div class="col-3 crud"><button id="ver" class="btn btn-outline-light w-100 crud clicked">VER</button></div>
+            <div class="col-3 crud"><button id="showCrear" class="btn btn-outline-light w-100 crud">NUEVO</button></div>
+            <div class="col-3 crud"><button id="showModificar" class="btn btn-outline-light w-100 crud">MODIFICAR</button></div>
+            <div class="col-3 crud"><button id="showEliminar" class="btn btn-outline-light w-100 crud">ELIMINAR</button></div>
+        </div>
+
+        <div class="row">
+            <div id="list" class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
+                <div class="py-1">
+                    <button id="allData" class="btn btn-primary w-100">VER TODOS</button>
                 </div>
-                <div class="espacio"></div>
-                <button id="showDni" class="btn btn-primary">BUSCAR POR DNI</button><br>
-                <div id="divDni">
-                    <div class="espacio"></div>
-                    <input type="search" id="documento"> <img src="img/lupa.png" id="byDni" alt="search">
-                    
+                <div>
+                    <button id="showName" class="btn btn-primary w-100 my-1">BUSCAR POR NOMBRE</button>
+                    <div id="divName" class="bd-highlight">
+                        <input type="search" class="flex-lg-fill mt-1 px-2" id="name">
+                        <img src="img/lupa.png" id="byName" class="mt-1" alt="search">
+                    </div>
                 </div>
-                <hr>
-                <div id="personas">
-                    <p id="resultados">Resultados</p>
+                <div class="mb-2">
+                    <button id="showDni" class="btn btn-primary w-100 my-1">BUSCAR POR DNI</button>
+                    <div id="divDni" class="bd-highlight">
+                        <input type="search" class="flex-fill mt-1 px-2" id="documento">
+                        <img src="img/lupa.png" id="byDni" class="mt-1" alt="search">
+                    </div>
                 </div>
-                <div class="espacio"></div>
+                <div id="dataList" class="border border-light px-1 mb-4">
+                    <p id="resultados" class="text-white">Resultados</p>
+                </div>
             </div>
+            <div class="col-sm-12 col-md-8 col-lg-9 col-xl-9">
+                <div id="datos" class="row">
 
-            <div id="datos">
-                <div id="datos1" class="container">
-                    <div class="form-group">
-                        <p>NOMBRE</p>
-                        <input class="input" id="nombre" type="text" readonly>
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
+                        <div class="form-group">
+                            <p class="text-white my-0">NOMBRE</p>
+                            <input class="w-100 text-center input " id="nombre" type="text" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <p class="text-white my-0">APELLIDO</p>
+                            <input class="w-100 text-center input" id="apellido" type="text" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <p class="text-white my-0">DNI</p>
+                            <input class="w-100 text-center input" id="dni" type="text" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <p class="text-white my-0">FECHA DE NACIMIENTO</p>
+                            <input class="w-100 text-center input" id="nacimiento" type="text" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <p class="text-white my-0">EDAD</p>
+                            <input class="w-100 text-center input" id="edad" type="number" readonly>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <p>APELLIDO</p>
-                        <input class="input" id="apellido" type="text" readonly>
-                    </div> 
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
 
-                    <div class="form-group"> 
-                        <p>DNI</p>
-                        <input class="input" id="dni" type="text" readonly>
-                    </div>
+                        <div class="form-group">
+                            <p class="text-white my-0">DOMICILIO</p>
+                            <input class="w-100 text-center input" id="domicilio" type="text" readonly>
+                        </div>
 
-                    <div class="form-group">
-                        <p>FECHA DE NACIMIENTO</p>
-                        <input class="input" id="nacimiento" type="text" readonly>
-                    </div>
+                        <div class="form-group">
+                            <p class="text-white my-0">E-MAIL</p>
+                            <input class="w-100 text-center input" id="email" type="text" readonly>
+                        </div>
 
-                    <div class="form-group">
-                        <p>EDAD</p>
-                        <input class="input" id="edad" type="number" readonly>
-                    </div>
-                </div>  
+                        <div class="form-group">
+                            <p class="text-white my-0">COMENTARIO</p>
+                            <textarea class="w-100 px-1 input" id="comentario" readonly></textarea>
+                        </div>
 
-                
+                        <div class="form-group d-flex justify-content-end">
+                            <div id="crear" class="btn btn-primary btn-gme button">CREAR</div>
+                            <div id="modificar" class="btn btn-primary btn-gme button">MODIFICAR</div>
+                            <div id="eliminar" class="btn btn-primary btn-gme button">ELIMINAR</div>
+                        </div>
 
-                <div id="datos2">
-                    <div class="form-group">          
-                        <p>DOMICILIO</p>
-                        <input class="input" id="domicilio" type="text" readonly>
-                    </div>
-
-                    <div class="form-group">
-                        <p>E-MAIL</p>
-                        <input class="input" id="email" type="text" readonly>
-                    </div>
-
-                    <div class="form-group">
-                        <p>COMENTARIO</p>
-                        <textarea class="input" id="comentario" rows="4" readonly></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <div id="crear" class="btn btn-primary btn-gme">CREAR</div>
-                        <div id="modificar" class="btn btn-primary btn-gme">MODIFICAR</div>
-                        <div id="eliminar" class="btn btn-primary btn-gme">ELIMINAR</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

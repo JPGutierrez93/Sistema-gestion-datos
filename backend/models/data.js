@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var ProjectSchema = Schema({
+var DataSchema = Schema({
     fecha_carga: {type: Date, default: Date.now},
     nombre: {type: String, required:true},
     apellido: {type: String, required:true},
@@ -14,4 +14,4 @@ var ProjectSchema = Schema({
     comentario: {type: String, required:false}
 });
 
-module.exports = mongoose.model('Project', ProjectSchema);
+module.exports = mongoose.model('Data', DataSchema);

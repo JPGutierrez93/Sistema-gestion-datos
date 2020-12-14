@@ -6,7 +6,7 @@ var bodyParser = require ('body-parser');
 var app = express();
 
 //path files
-var project_routes = require ('./routes/routes');
+var routes = require ('./routes/routes');
 
 
 //middlewares
@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 //routes
-app.use('/api', project_routes);
+app.use('/api', routes);
 
 //exports
 module.exports = app;

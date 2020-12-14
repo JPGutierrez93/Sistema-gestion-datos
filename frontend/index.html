@@ -19,33 +19,38 @@
 
 </head>
 <body>
+
     <main class="container">
-        <div class="jumbotron mt-4">
+        <div id="error" class="alert alert-danger my-1" >Usuario incorrecto o contraseña incorrecta. Verifica los datos ingresados!</div>
+
+        <div class="jumbotron mt-1 py-4">
             <h1 class="display-4">SISTEMA DE GESTIÓN DE DATOS</h1>
             <p class="lead">Bienvenido a mi sistema de gestión de datos.</p>
             <hr class="my-4">
             <p>Aquí podrás ver todas las personas registradas, buscar por nombre o DNI, agregar personas a la base de datos o borrarlas de ella.</p>
-            <button id="acceder" class="btn btn-primary btn-lg">ACCEDER</button>
-            
-            <div class="espacio"></div>
-            
-            <div id="login" class="card-body container ">
-                <form action="" id="form-login" method="POST">
-                    <div class="form-group">
-                        <input type="text" class="input" name="email" id="email" placeholder="E-mail">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="input" name="password" id="password" placeholder="Contraseña">
-                    </div>
-                    <div class="form-group">
-                        <button id="ingresar" class="btn btn-primary block float-right" type="submit">Ingresar</button>
-                    </div>
-                </form>
+            <button id="acceder" class="btn btn-primary btn-lg">Acceder</button>
+        
+            <div id="login" class="card col-sm-10 col-md-7 col-lg-6 col-xl-5 mx-auto mt-4 rounded w-75" >
+                <div class="card-header border-white">
+                    <div class="text-white"><h3 class="h4 text-center">INICIAR SESIÓN</h3></div>
+                </div>
+                <div class="card-body">
+                    <form action="" id="form-login" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="input form-control my-1" name="email" id="email" placeholder="E-mail">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="input form-control my-1" name="password" id="password" placeholder="Contraseña">
+                        </div>
+                        <div class="form-group">
+                            <button id="ingresar" class="btn btn-primary block float-right my-0" type="submit">Ingresar</button>
+                        </div>
+                    </form>
+
+                </div>
             </div>
 
-            <div class="espacio"></div>
 
-            <div id="error" class="alert alert-danger container" role="alert">Usuario incorrecto o contraseña incorrecta. Verifica los datos ingresados!</div>
 
         </div>
     </main> 
