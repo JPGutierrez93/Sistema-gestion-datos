@@ -5,40 +5,38 @@ $(document).ready(function(){
 
     //mostrar login
     $('#acceder').click(function(){
-        $('#login').fadeToggle(800)
+        $('#login').fadeToggle(300).css('display','flex');
     });
 
     //login
    
-    
-   var url = $(':header')[0].baseURI
-   var newUrl = url.replace("index.html", "sistema.html")
+   var url = $(':header')[0].baseURI;
+   var newUrl = url.replace("index.html", "sistema.html");
 
    $("#ingresar").click(function(e){
     
-        e.preventDefault()
+        e.preventDefault();
         var email = $('#email').val();
         var password = $('#password').val();
-        var token = ''
         $.ajax({
             type: 'POST',
             url: 'http://localhost:3700/api/login',
-            data: { email: email , password: password },
+            data: { email , password },
             success: function(resultData){
-                var token = resultData.token;
-                console.log(token)
-                localStorage.setItem('Bearer', token )
-                location.href = newUrl
+                localStorage.setItem('Bearer', resultData.token);
+                location.href = newUrl;
             },
             error: function(type,error,errord){
-                console.log(error,errord);
+                console.log('errors: ',type, error, errord);
                 $('#error').show();
-            }
-            
-            
+            }  
         });   
     });
 
+    //Ocultar mensaje de error al hacer focus en inputs
 
+    $('.input').click(function(){
+        $('#error').hide(100);
+    });
 
 });

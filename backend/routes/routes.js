@@ -1,35 +1,31 @@
 'use strict'
 
 var express = require ('express');
-var ProjectController = require ('../controllers/project');
+var DataController = require ('../controllers/data');
 var UserController = require('../controllers/user')
 var auth = require ('../middleware/auth')
 
-var Project = require ('../models/project');
+var Data = require ('../models/data');
 
 
 var router = express.Router();
-
-//router.post('/signup', UserController.signUp);
-
-//router.get('/signup', UserController.signUp);
 
 router.get('/login', UserController.signIn);
 
 router.post('/login', UserController.signIn);
 
-router.post ('/save-project', auth, ProjectController.saveProject);
+router.post ('/save-data', auth, DataController.saveData);
 
-router.get ('/project/:id?', auth, ProjectController.getProject);
+router.get ('/data/:id?', auth, DataController.getData);
 
-router.get ('/projects', auth, ProjectController.getProjects);
+router.get ('/all-data', auth, DataController.getAllData);
 
-router.post ('/projects/byname',auth, ProjectController.getByName);
+router.post ('/all-data/byname',auth, DataController.getByName);
 
-router.post ('/projects/bydni',auth, ProjectController.getByDni);
+router.post ('/all-data/bydni',auth, DataController.getByDni);
 
-router.put ('/project/:id',auth, ProjectController.updateProject);
+router.put ('/data/:id',auth, DataController.updateData);
 
-router.delete('/project/:id',auth, ProjectController.deleteProject);
+router.delete('/data/:id',auth, DataController.deleteData);
 
 module.exports = router;
